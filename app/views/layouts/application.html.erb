@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ajay</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<div class="content">
+		<div id="top">
+			<div class="topright">
+			 	<a href="#"><img src="/assets/sitemap.png" alt="Sitemap" /></a> ^ 
+			 	<a href="#"><img src="/assets/rss.png" alt="RSS" /></a>				
+			</div>
+		</div>
+		<div id="header">
+			
+			<div class="headings">
+				<h1>My first App</h1>
+				<h2>Ruby on Rails</h2>
+			</div>
+		</div>
+	
+			<div id="menu">
+			  	<ul>
+					<li><a href="#">link.one</a></li>
+					<li><a href="#">link.two</a></li>
+					<li><a href="#">link.three</a></li>
+					<li><a href="#">link.four</a></li>
+					<% if session[:admin].nil? %>
+					<li><a href="/admin/login">Admin Login</a></li>
+                    <% else%>
+      				<li><a href="/admin/logout">Admin Logout</a></li>
+      			    <% end %>
+				</ul>
+			</div>	
+			
+		
+		<div id="main">
+			<div class="right">
+				
+				
+				<div class="nav">
+				<h2>Right Column</h2>
+	
+				<h2>More Links?</h2>
+					<ul>
+						<li><a href="http://www.openwebdesign.org">OWD</a></li>
+						<li><a href="http://www.designcreek.com">DesignCreek</a></li>
+						<li><a href="#">Link.three</a></li>
+						<li><a href="#">Link.four</a></li>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="left">
+				<%= yield %>
+				
+		</ul>
+				
+
+			</div>
+			
+		</div>
+		
+		<div id="footer">
+			<div class="info">
+				&copy; All rights reserved MyApp</div>
+		</div>
+	</div>
+
+  </body>
+</html>
